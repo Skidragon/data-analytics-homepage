@@ -89,12 +89,15 @@ nav a:hover {
   border: none;
   cursor: pointer;
 }
-
-.sm-screen-logo {
-  margin: 0 auto;
+.logo {
   color: var(--blue);
 }
-
+.sm-screen-logo {
+  margin: 0 auto;
+}
+.lg-screen-logo {
+  display: none;
+}
 main {
   height: 100vh;
   width: 100%;
@@ -103,7 +106,7 @@ main {
   background: black;
   background-image: url("src/bg.jpg");
   background-size: cover;
-  background-position: 50%;
+  background-position: 100%;
 }
 
 .content {
@@ -121,12 +124,15 @@ main {
 
 .subject {
   font-size: 4rem;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .hook-line {
   color: var(--grey);
   font-size: 3rem;
   margin: 2rem 0;
+  line-height: 1;
 }
 
 .cta-btn {
@@ -136,10 +142,11 @@ main {
   padding: 1em 2em;
   background: none;
   color: var(--white);
-  border: 2px solid var(--grey);
+  border: 4px solid var(--grey);
   cursor: pointer;
   width: auto;
   margin-right: auto;
+  font-weight: 600;
 }
 
 .cta-btn:hover {
@@ -152,8 +159,10 @@ main {
 .cta-btn:hover img {
   filter: invert(1);
 }
-
-@media screen and (min-width: 600px) {
+.lg-screen-logo {
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 700px) {
   body {
     display: flex;
   }
@@ -176,5 +185,11 @@ main {
   }
   nav li:nth-child(2) {
     background: var(--blue);
+  }
+  .lg-screen-logo {
+    display: block;
+  }
+  .content {
+    position: relative;
   }
 }
