@@ -19,6 +19,7 @@ html {
 /* NAVIGATION MENU */
 nav {
   display: none;
+  z-index: 1000;
   background: var(--black);
   color: var(--white);
   font-size: 2rem;
@@ -34,7 +35,6 @@ nav ul {
 }
 nav li {
   display: flex;
-  /* border: 1px solid green; */
 }
 nav li:first-child {
   background: var(--blue);
@@ -42,7 +42,6 @@ nav li:first-child {
 nav a {
   color: unset;
   text-decoration: none;
-  /* border: 1px solid red; */
   padding: 1em 5vw;
   width: 100%;
 }
@@ -51,7 +50,6 @@ nav a:hover {
 }
 .close-menu-btn {
   border: none;
-  /* border: 1px solid red; */
   display: flex;
   justify-content: flex-start;
   padding: 4em 5vw;
@@ -74,13 +72,88 @@ nav a:hover {
   top: 0;
   width: 100%;
   padding: 0.5em 10vw;
+  background: var(--black);
+  z-index: 998;
+}
+.top-bar .bottom-border {
+  background: rgb(44, 41, 49);
+  background: linear-gradient(90deg, rgba(44, 41, 49, 1) 0%, #111111 90%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
 }
 .open-menu-btn {
   background: none;
   border: none;
   cursor: pointer;
 }
+
 .sm-screen-logo {
   margin: 0 auto;
   color: var(--blue);
+}
+
+main {
+  height: 100vh;
+  color: var(--white);
+  padding: 3rem 10vw;
+  background: black;
+}
+main::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.45;
+  background-image: url("src/bg.jpg");
+  background-size: cover;
+  background-position: 50%;
+}
+.content {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-top: 2rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.content::before {
+  content: "";
+}
+
+.subject {
+  font-size: 4rem;
+}
+
+.hook-line {
+  color: var(--grey);
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.cta-btn {
+  font-size: 1rem;
+  padding: 1em 2em;
+  background: none;
+  color: var(--white);
+  border: 2px solid var(--grey);
+  cursor: pointer;
+  width: auto;
+  margin-right: auto;
+}
+
+.cta-btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+.cta-btn img {
+  margin-right: 1rem;
+}
+.cta-btn:hover img {
+  filter: invert(1);
 }
