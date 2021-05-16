@@ -174,4 +174,7 @@ main {
   nav li:first-child {
     background: inherit;
   }
+  nav li:nth-child(2) {
+    background: var(--blue);
+  }
 }
